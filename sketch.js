@@ -1,6 +1,12 @@
 const saveButton = document.querySelector('button#save');
 const colorInput = document.querySelector('input#color');
-console.log(colorInput);
+document.addEventListener(
+	'touchmove',
+	(e) => {
+		e.preventDefault();
+	},
+	{ passive: false },
+);
 
 let paintColor = '#ff6347';
 colorInput.value = paintColor;
@@ -27,8 +33,6 @@ function mouseDragged() {
 		point(mouseX + random(-10, 10), mouseY + random(-10, 10));
 	}
 }
-
-function buttonHandler() {}
 
 function keyPressed() {
 	if (key === 's') {
